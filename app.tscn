@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://6t2fpgepc4j2"]
+
+[ext_resource type="FontFile" uid="uid://c3u3c4h1pd3yy" path="res://assets/fonts/Roboto/Roboto-Regular.ttf" id="1_ewoa3"]
+[ext_resource type="Script" path="res://addons/goduz/classes/root_component.gd" id="1_x7yoc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6b3up"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.772549, 0.560784, 0.192157, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_gx4ar"]
+default_font = ExtResource("1_ewoa3")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_6b3up")
+
+[node name="App" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_gx4ar")
+
+[node name="RootComponent" type="Node" parent="."]
+script = ExtResource("1_x7yoc")
+show_reload_button = false

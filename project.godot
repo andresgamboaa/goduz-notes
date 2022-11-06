@@ -1,0 +1,99 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Component",
+"class": &"App",
+"language": &"GDScript",
+"path": "res://app.gd"
+}, {
+"base": "Node",
+"class": &"BaseComponent",
+"language": &"GDScript",
+"path": "res://addons/goduz/classes/base_component.gd"
+}, {
+"base": "Component",
+"class": &"BaseRootComponent",
+"language": &"GDScript",
+"path": "res://addons/goduz/classes/base_root_component.gd"
+}, {
+"base": "BaseComponent",
+"class": &"BasicComponent",
+"language": &"GDScript",
+"path": "res://addons/goduz/classes/basic_component.gd"
+}, {
+"base": "BaseComponent",
+"class": &"Component",
+"language": &"GDScript",
+"path": "res://addons/goduz/classes/component.gd"
+}, {
+"base": "Component",
+"class": &"GoduzCounter",
+"language": &"GDScript",
+"path": "res://addons/goduz/example/counter.gd"
+}, {
+"base": "Component",
+"class": &"Note",
+"language": &"GDScript",
+"path": "res://components/note.gd"
+}, {
+"base": "Component",
+"class": &"NotesList",
+"language": &"GDScript",
+"path": "res://components/notes_list.gd"
+}, {
+"base": "BaseRootComponent",
+"class": &"RootComponent",
+"language": &"GDScript",
+"path": "res://addons/goduz/classes/root_component.gd"
+}, {
+"base": "Component",
+"class": &"TopBar",
+"language": &"GDScript",
+"path": "res://components/top_bar.gd"
+}]
+_global_script_class_icons={
+"App": "",
+"BaseComponent": "",
+"BaseRootComponent": "",
+"BasicComponent": "",
+"Component": "",
+"GoduzCounter": "",
+"Note": "",
+"NotesList": "",
+"RootComponent": "",
+"TopBar": ""
+}
+
+[application]
+
+config/name="Goduz Notes"
+run/main_scene="res://app.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+run/low_processor_mode=true
+
+[autoload]
+
+Goduz="*res://addons/goduz/singletons/goduz.gd"
+Gui="*res://addons/goduz/singletons/gui.gd"
+GoduzUtils="*res://addons/goduz/singletons/goduz_utils.gd"
+
+[display]
+
+window/size/viewport_width=300
+window/size/viewport_height=500
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/goduz/plugin.cfg")
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.145098, 0.145098, 0.145098, 1)

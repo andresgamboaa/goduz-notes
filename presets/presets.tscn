@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://xt6moys3m28w"]
+
+[ext_resource type="FontFile" uid="uid://bk8amuw8lq0wa" path="res://assets/fonts/Roboto/Roboto-Medium.ttf" id="1_j5lph"]
+
+[sub_resource type="Theme" id="Theme_ct1ar"]
+Label/colors/font_color = Color(0, 0, 0, 0.733333)
+Label/font_sizes/font_size = 20
+
+[sub_resource type="Theme" id="Theme_xawpj"]
+Label/colors/font_color = Color(0, 0, 0, 0.576471)
+
+[sub_resource type="Theme" id="Theme_yufq2"]
+default_font = ExtResource("1_j5lph")
+Label/font_sizes/font_size = 31
+Label/fonts/font = ExtResource("1_j5lph")
+
+[node name="_presets" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="_text" type="VBoxContainer" parent="."]
+offset_right = 300.0
+offset_bottom = 105.0
+
+[node name="note_text" type="Label" parent="_text"]
+offset_right = 300.0
+offset_bottom = 31.0
+theme = SubResource("Theme_ct1ar")
+text = "Note text"
+autowrap_mode = 3
+
+[node name="note_date" type="Label" parent="_text"]
+offset_top = 35.0
+offset_right = 300.0
+offset_bottom = 61.0
+theme = SubResource("Theme_xawpj")
+text = "created"
+autowrap_mode = 3
+
+[node name="title" type="Label" parent="_text"]
+offset_top = 65.0
+offset_right = 300.0
+offset_bottom = 105.0
+theme = SubResource("Theme_yufq2")
+text = "title"
