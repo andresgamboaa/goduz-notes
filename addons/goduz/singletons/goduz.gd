@@ -292,7 +292,7 @@ func update_list(current:BasicComponent, next:BasicComponent):
 				# create item
 				next.remove_child(next_item)
 				current.add_child(next_item)
-				print("create item (" + str(next_item.key)+")")
+#				print("create item (" + str(next_item.key)+")")
 				render(current.control_node, next_item, current.owner_component)
 				current_size += 1
 		# if not item

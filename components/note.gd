@@ -7,8 +7,6 @@ func component_ready():
 	var tween = control_ref.create_tween() as Tween
 	tween.tween_property(control_ref, "modulate:a", 1.0, 0.3).from(0.0).set_trans(Tween.TRANS_CUBIC)
 
-func component_updated():
-	print("item ready")
 
 func on_selection_toggled():
 	call_method(props.on_selection_toggled, [props.data.id])
