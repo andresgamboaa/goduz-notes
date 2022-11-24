@@ -5,14 +5,13 @@ var line_edit_ref: LineEdit
 
 func _init():
 	super()
-	state.notes = [
-		{
-			id="0", 
-			note="How to make your personal brand stand out online", 
-			created="2022-10-4", 
-			color=colors[1], 
-			selected=false},
-	]
+	state.notes = [{
+		id="0", 
+		note="How to make your personal brand stand out online", 
+		created="2022-10-4", 
+		color=colors[1], 
+		selected=false
+	}]
 
 func add(t: String):
 	t = t.strip_edges()
@@ -25,9 +24,11 @@ func add(t: String):
 		color=colors[randi_range(0, colors.size()-1)]
 	})
 	line_edit_ref.text = ""
+
 func on_note_selection_toggled(id):
 	var note = state.notes.filter(func(note): return note.id == id)[0]
 	note.selected = not note.selected
+
 func delete_selected_notes():
 	state.notes = state.notes.filter(func(n): return not n.selected)
 
@@ -37,6 +38,6 @@ func view():
 		vbox({},[
 			TopBar.new({notes=state.notes, on_delete_selected_notes=delete_selected_notes}),
 			NotesList.new({notes=state.notes, on_note_selection_toggled=on_note_selection_toggled}),
-			line_edit({assign_to="line_edit_ref", preset="expand-h", placeholder_text="Note +", on_text_submitted=add})
+			line_edit({ref="line_edit_ref", preset="expand-h", placeholder_text="Note +", on_text_submitted=add})
 		])
 	])

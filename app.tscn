@@ -30,4 +30,3 @@ theme = SubResource("Theme_gx4ar")
 
 [node name="RootComponent" type="Node" parent="."]
 script = ExtResource("1_x7yoc")
-show_reload_button = false

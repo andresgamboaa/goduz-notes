@@ -9,8 +9,8 @@ func add_preset(preset_name:String,node:Control) -> void:
 
 
 func get_preset(preset_name:String) -> Dictionary:
-#	print(preset_name)
-	assert(presets.has(preset_name), "A preset not defined has been assigned to a component.")
+	var message = "The preset (" + preset_name + ") does not exists."
+	assert(presets.has(preset_name), message)
 	return presets[preset_name]
 
 
@@ -92,10 +92,6 @@ func initialize_presets(path) -> void:
 	
 	presets["clip_contents"] = {
 		clip_contents = true
-	}
-	
-	presets["mouse_filter_pass"] = {
-		mouse_filter = 1
 	}
 	
 	if path:
